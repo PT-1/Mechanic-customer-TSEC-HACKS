@@ -9,28 +9,29 @@
 <body>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    <div class="container col-md-4 mt-5">
     <header>
         <h3 class="text-center">Login</h3>
     </header>
     <div class="form-group">
-        <div class="login">
+        <div class="form-group">
         <div class="butt">
             <button class="customer-selected btn" id="customer" onclick="toggle(event)">customer</button>
             <button class="mech btn" id="mechanic" onclick="toggle2(event)">mechanic</button></div>
             <div class="customerlogin">
-                <form>
+                <form method="POST">
                     
-                    <input class="form-control" type="text" name="username" placeholder="Username">
+                    <input class="form-control" type="text" name="username" placeholder="Username" required>
                     
-                    <input class="form-control" type="password" name="password" placeholder="Password">
+                    <input class="form-control" type="password" name="password" placeholder="Password" required>
                     
-                    <button class="btn btn-primary" onclick="login(event)">Login</button>
+                    <button type="submit" class="btn btn-primary" onclick="login(event)">Login</button>
                 </form>
             </div>
         </div>
 
     </div>
-
+</div>
 <script src="/js/main.js" rel="text/javascript"></script>
 </body>
 
