@@ -1,0 +1,31 @@
+const mongoose = require('mongoose');
+
+const registeration = new mongoose.model('resgisterMech',{
+    fullname : {
+        type:String,
+        required : true,
+    },
+    username :{
+        type: String,
+        required : true,
+    },
+    mobile_num : {
+        type: String,
+        required : true,
+    },
+    address : {
+        type: String,
+        required : true,
+    },
+    username : {
+        type : String,
+        unique:true,
+        required:true,
+    },
+    password: {
+        type :String,
+        require:true,
+    }
+})
+
+module.exports = registeration;
