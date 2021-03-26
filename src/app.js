@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-require('./../db/connection');
+require('./../mongo/connection');
 const hbs = require('hbs');
 const path = require('path');
 const port = process.env.PORT|| 4000;
