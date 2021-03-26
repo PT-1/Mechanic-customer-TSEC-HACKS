@@ -10,7 +10,7 @@
     </header>
     <div class="main-body">
         <div class="login">
-        <div><button>customer</button><button>mechanic</button></div>
+        <div class="butt"><button class="customer-selected" id="customer" onclick="toggle(event)">customer</button><button class="mech" id="mechanic" onclick="toggle2(event)">mechanic</button></div>
             <div class="customerlogin">
                 <form >
                     
@@ -18,6 +18,7 @@
                     
                     <input type="password" name="password" placeholder="Password">
                     
+                    <button onclick="login(event)">Login</button>
                 </form>
             </div>
             <div class="mechaniclogin">
@@ -26,7 +27,7 @@
 
     </div>
 
-
+<script src="/js/main.js" rel="text/javascript"></script>
 </body>
 
 </html>
