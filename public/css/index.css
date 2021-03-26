@@ -27,16 +27,17 @@ header {
 
 }
 .customerlogin  {
-    background-color: chartreuse;
+    /* background-color: chartreuse;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    margin-top: 25px;
-    border :1px solid black;
+    margin-top: 25px; */
+    /* border :1px solid black; */
 }
-.formm {
+.form {
     display: flex;
     justify-content: space-around;
+    border: 5px solid pink;
 }
 input {
      width: 95%;
@@ -46,11 +47,11 @@ input {
      margin-top: 35px;
      border-radius: 14px;
      font-size: x-large;
-     border :1px solid black;
+     /* border :1px solid black; */
      background-color: rgb(184, 170, 170);
  }
  .butt {
-    background-color: chartreuse;
+    /* background-color: chartreuse; */
      display: flex;
      justify-content: space-around;
  }
@@ -58,10 +59,15 @@ input {
      font-size: x-large;
      width: 50%;
  }
- .customer-selected , .mechanic-selected {
+ .customer-selected {
      background-color: chartreuse;
      color: brown;
  }
+
+ .mechanic-selected {
+    background-color: cyan;
+    color: brown;
+}
  form button {
      text-align: center;
      margin-left: 25%;

@@ -12,20 +12,20 @@
     <header>
         <h3 class="text-center">Login</h3>
     </header>
-    <div class="main-body">
+    <div class="form-group">
         <div class="login">
-        <div class="butt"><button class="customer-selected btn btn-primary" id="customer" onclick="toggle(event)">customer</button><button class="mech btn btn-secondary" id="mechanic" onclick="toggle2(event)">mechanic</button></div>
+        <div class="butt">
+            <button class="customer-selected btn" id="customer" onclick="toggle(event)">customer</button>
+            <button class="mech btn" id="mechanic" onclick="toggle2(event)">mechanic</button></div>
             <div class="customerlogin">
-                <form >
+                <form>
                     
-                    <input type="text" name="username" placeholder="Username">
+                    <input class="form-control" type="text" name="username" placeholder="Username">
                     
-                    <input type="password" name="password" placeholder="Password">
+                    <input class="form-control" type="password" name="password" placeholder="Password">
                     
-                    <button onclick="login(event)">Login</button>
+                    <button class="btn btn-primary" onclick="login(event)">Login</button>
                 </form>
-            </div>
-            <div class="mechaniclogin">
             </div>
         </div>
 
