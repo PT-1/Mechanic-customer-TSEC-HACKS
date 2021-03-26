@@ -24,5 +24,9 @@ app.get('/registerMechanic',(req,res) => {
     res.render('SignupMechanic');
 })
 
+app.get('/registerCustomer',(req,res) => {
+    res.render('SignupCustomer');
+})
+
 
 app.listen(port);
