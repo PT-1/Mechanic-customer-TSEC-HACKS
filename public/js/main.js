@@ -29,4 +29,8 @@ const toggle2 = (e) => {
 const login = (e) => {
     e.preventDefault();
     console.log('login initialises here');
+    var formData = new FormData(document.querySelector('form'))
+    console.log(formData.get("username"), formData.get("password"))
+    username = formData.get("username")
+    password = formData.get("password")
 }
