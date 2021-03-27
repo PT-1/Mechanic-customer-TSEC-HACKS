@@ -40,7 +40,7 @@
             <span id="category" category_type="Mechanic"></span>
         </div>
 
-        <div id="#customerForm" class="col-md-4">
+        <div id="customerForm" class="col-md-4">
             <form id="serviceForm" action="javascript:void(0)" onsubmit="service(event)">
             <div>
                 <h4>Choose vehicle type:</h4>
@@ -52,29 +52,21 @@
             </div>
         
                 <div>
-                    <button class="btn btn-primary" type="submit" name="registermechanic" onclick="">Register</button>
+                    <button class="btn btn-primary" type="submit" name="registermechanic" onclick="">submit</button>
                 </div>
             </div>
         </form>
         </div>
         <div>
             <div class="footer">
-        
+                    <p id = 'passVar' style="display: none;"> {{category}} </p>
             </div>
         </div>
     </div>
 
-    {{!-- <script>
-        console.log("in script below checking category :");
-        if ({{category}} == "Mechanic") {
-            
-        const customerForm = document.getElementById("#customerForm");
-        customerForm.style.display = 'none';
-        console.log("in script below checking category :");
-
-    }
-
-    </script> --}}
+    
     <script src="/js/home.js" rel="text/javascript"></script>
 </body>
 </html>
+
+

@@ -62,6 +62,6 @@
       padding: 20px;
   }
 
-  #customerForm{
-      display: block;
+  .cust{
+      display: none;
   }
