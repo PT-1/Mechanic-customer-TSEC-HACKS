@@ -26,19 +26,39 @@ app.get('',(req,res) => {
 app.get('/register',(req,res) => {
     res.render('Signup');
 })
-app.post('/register',(req,res) => {
+app.post('/register',async (req,res) => {
     // console.log(req.body.username);
     // console.log('initialized');
     const user = new registeration(req.body);
 
-    user.save().then((err)=>{
-        console.log(err);
-        // res.redirect(`/authenticate?username=${user.username}&password=${user.password}`)
-    }).catch((err)=>{
-        if(err){
-            res.send(err)
-        }
-    })
+    username_check = await registeration.aggregate(
+        [
+          {
+            $match: {
+              username: req.body.username
+            }
+          },
+          {
+            $count: "username_count"
+          }
+        ]
+    )
+    // console.log(registeration.find({username : "Rajnikant"}).count());
+    console.log("username count:", username_check);
+
+    if(username_check.length == 0){
+        user.save().then((err)=>{
+            console.log(err);
+            // res.redirect(`/authenticate?username=${user.username}&password=${user.password}`)
+        }).catch((err)=>{
+            if(err){
+                res.send(err)
+            }
+        })
+    }
+    else{
+        console.log("Already exists!");
+    }
     
 })
 
