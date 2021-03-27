@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+</head>
+<body style="background-color: wheat;">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
+    <div class="container-fluid">
+        <div class="header row">
+            <div class="col-1"></div>
+            <img class= "logo-img" src="/images/mechanic.jpg" alt="">
+            <h3 class="col-7 text-center">We are happy to serve {{username}} ji</h3>
+            <div class="col-3 header-right">
+              <a class="active" href="#home">Home</a>
+              <a href="#contact">Contact</a>
+              <a href="#about">About</a>
+            </div>
+          </div>
+        <!-- <div class="container-fluid" >
+            <div class="row">
+                <img class="img-fluid col-4" src="../../public/images/bike.jpg" alt="">
+                <img class="img-fluid col-4" src="../../public/images/car.jpg" alt="">
+                <img class="img-fluid col-4" src="../../public/images/bike.jpg" alt="">
+            </div>
+    
+                
+        </div> -->
+        <div hidden>
+            <span id="category" category_type="Mechanic"></span>
+        </div>
+
+        <div id="#customerForm" class="col-md-4">
+            <form id="serviceForm" action="javascript:void(0)" onsubmit="service(event)">
+            <div>
+                <h4>Choose vehicle type:</h4>
+                <select class="form-control" name="usertype" id="usertype">
+                    <option value="Customer">Customer</option>
+                    <option value="Mechanic">Mechanic</option>
+                </select>
+                <br>
+            </div>
+        
+                <div>
+                    <button class="btn btn-primary" type="submit" name="registermechanic" onclick="">Register</button>
+                </div>
+            </div>
+        </form>
+        </div>
+        <div>
+            <div class="footer">
+        
+            </div>
+        </div>
+    </div>
+
+    {{!-- <script>
+        console.log("in script below checking category :");
+        if ({{category}} == "Mechanic") {
+            
+        const customerForm = document.getElementById("#customerForm");
+        customerForm.style.display = 'none';
+        console.log("in script below checking category :");
+
+    }
+
+    </script> --}}
+    <script src="/js/home.js" rel="text/javascript"></script>
+</body>
+</html>

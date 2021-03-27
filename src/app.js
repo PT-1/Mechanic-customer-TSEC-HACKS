@@ -105,7 +105,8 @@ app.post('/login',async (req,res) => {
 app.get('/homepage',(req,res) => {
 
     // console.log(req.session.username);
-    res.send('loggedd in'+ ' '+req.session.username + ' ' + req.session.category);
+    res.render('home', {username: req.session.username, category: req.session.category })
+    // res.send('loggedd in'+ ' '+req.session.username + ' ' + req.session.category);
 })
 
 
