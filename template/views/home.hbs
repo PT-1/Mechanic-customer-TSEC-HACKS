@@ -40,19 +40,20 @@
             <span id="category" category_type="Mechanic"></span>
         </div>
 
-        <div id="customerForm" class="col-md-4">
+        <div id="customerForm" class="form-group col-md-4">
             <form id="serviceForm" action="javascript:void(0)" onsubmit="service(event)">
             <div>
                 <h4>Choose vehicle type:</h4>
-                <select class="form-control" name="usertype" id="usertype">
-                    <option value="Customer">Customer</option>
-                    <option value="Mechanic">Mechanic</option>
+                <select class="form-control" name="vehicletype" id="vehicletype">
+                    <option value="Car">Car</option>
+                    <option value="Bike">Bike</option>
+                    <option value="Truck">Truck</option>
+                    <option value="Auto-Rickshaw">Auto-Rickshaw</option>
                 </select>
                 <br>
             </div>
-        
                 <div>
-                    <button class="btn btn-primary" type="submit" name="registermechanic" onclick="">submit</button>
+                    <button class="btn btn-primary" type="submit" name="Nearbymechanic" onclick="">Find mechanics</button>
                 </div>
             </div>
         </form>

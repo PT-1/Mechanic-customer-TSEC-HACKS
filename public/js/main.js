@@ -13,14 +13,14 @@ const toggle = (e) => {
 
     
 }
-if('geolocation' in navigator) {
-    console.log('available');
-    navigator.geolocation.getCurrentPosition((position) => {
-        console.log(position.coords.latitude, position.coords.longitude);
-      });
-  } else {
-   console.log('not available');
-  }
+// if('geolocation' in navigator) {
+//     console.log('available');
+//     navigator.geolocation.getCurrentPosition((position) => {
+//         console.log(position.coords.latitude, position.coords.longitude);
+//       });
+//   } else {
+//    console.log('not available');
+//   }
 const toggle2 = (e) => {
     e.preventDefault();
     var button = document.querySelector('#mechanic');
