@@ -4,7 +4,9 @@ require('./../mongo/connection');
 const hbs = require('hbs');
 const path = require('path');
 const port = process.env.PORT|| 4000;
-
+const registeration = require('./../mongo/models/registerMech');
+app.use(express.urlencoded());
+app.use(express.json());
 
 const publicDirec = path.join(__dirname,'../public');
 const viewsPath = path.join(__dirname,'../template/views');
@@ -17,13 +19,29 @@ hbs.registerPartials(partialsPath);
 app.use(express.static(publicDirec))
 
 
-app.get('/',(req,res) => {
+app.get('',(req,res) => {
     res.render('index');
 })
 
 app.get('/register',(req,res) => {
     res.render('Signup');
 })
+app.post('/register',(req,res) => {
+    // console.log(req.body.username);
+    // console.log('initialized');
+    const user = new registeration(req.body);
+
+const x =    user.save().then((err)=>{
+        console.log(err);
+        // res.redirect(`/authenticate?username=${user.username}&password=${user.password}`)
+    }).catch((err)=>{
+        res.send({
+            err: 'username is not available'
+        })
+    })
+    console.log(x);
+})
+
 
 // app.get('/registerCustomer',(req,res) => {
 //     res.render('SignupCustomer');
