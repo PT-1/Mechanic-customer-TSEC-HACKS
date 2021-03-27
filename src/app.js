@@ -79,6 +79,8 @@ app.post('/login',async (req,res) => {
         
         if(user) {
             req.session.username = req.body.username;
+            req.session.category = user.category;
+
             console.log('login found');
             // const userJson = {
             //     fname : user.fname,
@@ -103,7 +105,7 @@ app.post('/login',async (req,res) => {
 app.get('/homepage',(req,res) => {
 
     // console.log(req.session.username);
-    res.send('loggedd in'+ ' '+req.session.username);
+    res.send('loggedd in'+ ' '+req.session.username + ' ' + req.session.category);
 })
 
 
