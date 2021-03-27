@@ -1,5 +1,6 @@
 const register = (e) => {
     e.preventDefault();
+    const category = e.target.elements.usertype.value;
     const fullname = e.target.elements.name.value;
     const username = e.target.elements.username.value;
     const mobileNo = e.target.elements.mobile.value;
@@ -15,6 +16,7 @@ const register = (e) => {
                 username:username,
                 mobileNo :mobileNo,
                 address :address,
+                category :category,
                 password :password,
    
                 
@@ -24,7 +26,9 @@ const register = (e) => {
             }
         }).then(response => {
          response.json().then(data => {
-             if(data.err) console.log('helllekeosdnfs');
+            res.send({
+                err: 'username is not available'
+            })
          })   
          
     })

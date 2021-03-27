@@ -4,7 +4,7 @@ require('./../mongo/connection');
 const hbs = require('hbs');
 const path = require('path');
 const port = process.env.PORT|| 4000;
-const registeration = require('./../mongo/models/registerMech');
+const registeration = require('./../mongo/models/registerMech.js');
 app.use(express.urlencoded());
 app.use(express.json());
 
@@ -31,15 +31,15 @@ app.post('/register',(req,res) => {
     // console.log('initialized');
     const user = new registeration(req.body);
 
-const x =    user.save().then((err)=>{
+    user.save().then((err)=>{
         console.log(err);
         // res.redirect(`/authenticate?username=${user.username}&password=${user.password}`)
     }).catch((err)=>{
-        res.send({
-            err: 'username is not available'
-        })
+        if(err){
+            res.send(err)
+        }
     })
-    console.log(x);
+    
 })
 
 

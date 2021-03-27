@@ -7,9 +7,11 @@ const registeration = new mongoose.model('resgisterMech',{
     },
     username :{
         type: String,
+        unique : true,
         required : true,
+        dropDups: true
     },
-    mobile_num : {
+    mobileNo : {
         type: String,
         required : true,
     },
@@ -18,7 +20,8 @@ const registeration = new mongoose.model('resgisterMech',{
         required : true,
     },
     category :{
-
+        type: String,
+        required : true,
     },
     password: {
         type :String,
