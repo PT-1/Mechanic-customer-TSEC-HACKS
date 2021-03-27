@@ -21,13 +21,13 @@ app.get('/',(req,res) => {
     res.render('index');
 })
 
-app.get('/registerMechanic',(req,res) => {
-    res.render('SignupMechanic');
+app.get('/register',(req,res) => {
+    res.render('Signup');
 })
 
-app.get('/registerCustomer',(req,res) => {
-    res.render('SignupCustomer');
-})
+// app.get('/registerCustomer',(req,res) => {
+//     res.render('SignupCustomer');
+// })
 
 
 app.listen(port);
