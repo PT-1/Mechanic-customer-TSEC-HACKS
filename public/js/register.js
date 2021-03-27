@@ -3,3 +3,4 @@ const register = (e) => {
     const fullname = e.target.elements.name.value;
     console.log(fullname);
 }
+
