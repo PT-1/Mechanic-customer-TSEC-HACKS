@@ -5,6 +5,7 @@ const hbs = require('hbs');
 const path = require('path');
 const port = process.env.PORT|| 4000;
 const registeration = require('./../mongo/models/registerMech.js');
+const session = require('express-session');
 app.use(express.urlencoded());
 app.use(express.json());
 
@@ -14,6 +15,12 @@ const partialsPath = path.join(__dirname, '../template/partials');
 
 
 app.set('view engine', 'hbs');
+app.use(session({
+    secret: 'keyboard cat',
+    resave: false,
+    saveUninitialized: true,
+    
+}))
 app.set('views', viewsPath);
 hbs.registerPartials(partialsPath);
 app.use(express.static(publicDirec))
@@ -62,10 +69,42 @@ app.post('/register',async (req,res) => {
     
 })
 
+app.post('/login',async (req,res) => {
+   
+    await registeration.findOne({username : req.body.username ,password : req.body.password},function(err,user) {
 
-// app.get('/registerCustomer',(req,res) => {
-//     res.render('SignupCustomer');
-// })
+        if(err){
+            res.statusCode(500);
+        }
+        
+        if(user) {
+            req.session.username = req.body.username;
+            console.log('login found');
+            // const userJson = {
+            //     fname : user.fname,
+            //     lname: user.lname,
+            //     email: user.email,
+            //     username: user.username
+            // }
+            // let token = jwt.sign(userJson,"qwerty");
+            // res.cookie('authenticationToken',token);
+            
+            
+            res.redirect('/homepage')
+        } else {
+            res.send({
+                err:'No such user found!',
+            })
+        }
+    })
+})
+
+
+app.get('/homepage',(req,res) => {
+
+    // console.log(req.session.username);
+    res.send('loggedd in'+ ' '+req.session.username);
+})
 
 
 app.listen(port);

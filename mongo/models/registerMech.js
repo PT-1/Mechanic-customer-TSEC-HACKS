@@ -23,7 +23,7 @@ const registeration = new mongoose.model('registerMech',{
         type: String,
         required : true,
     },
-    password: {
+    password : {
         type :String,
         require:true,
     }
