@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const registeration = new mongoose.model('resgisterMech',{
+const registeration = new mongoose.model('resgister',{
     fullname : {
         type:String,
         required : true,
@@ -17,10 +17,8 @@ const registeration = new mongoose.model('resgisterMech',{
         type: String,
         required : true,
     },
-    username : {
-        type : String,
-        unique:true,
-        required:true,
+    category :{
+        
     },
     password: {
         type :String,
