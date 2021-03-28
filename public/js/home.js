@@ -13,6 +13,8 @@ window.onload = function checkCategory() {
 
     }
 }
+var user_latitude = 1.1
+var user_longitude = 12.12
 if('geolocation' in navigator) {
     console.log('available');
     navigator.geolocation.getCurrentPosition((position) => {
@@ -29,18 +31,7 @@ const service = (e) => {
     const vehicletype = e.target.elements.vehicletype.value;
 
     if (user_latitude != null && user_longitude != null){
-        fetch("/getMechanics", {
-            method: "POST", 
-            body: JSON.stringify({ 
-            vehicletype : vehicletype,
-            user_latitude : user_latitude,
-            user_longitude : user_longitude
-    
-        }), 
-        headers: { 
-            "Content-type": "application/json; charset=UTF-8"
-        }
-    }).then(response => {
+        fetch(`/getMechanics?user_latitude=${user_latitude}&user_longitude=${user_longitude}`).then(response => {
         response.json().then(data => {
            res.send({
                err: 'Mechanics are not available'
