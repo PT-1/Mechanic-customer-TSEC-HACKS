@@ -63,7 +63,9 @@ app.post('/register',async (req,res) => {
                 res.send(err)
             }
         })
+        res.redirect('/homepage');
     }
+    
     else{
         console.log("Already exists!");
     }
@@ -136,7 +138,7 @@ var url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${address}.json?acc
         // return callback('network unavailable',undefined);
         console.log("No address");
         }
-        request({ url : url , json : true } , async (err ,res ) => {
+            request({ url : url , json : true } , (err ,res ) => {
         if(err) {
             callback('network unavailable',undefined);
         } else if(res.body.features.length === 0) {
@@ -146,17 +148,19 @@ var url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${address}.json?acc
             lat_long["latitude"] = res.body.features[0].center[0];
             lat_long["longitude"] = res.body.features[0].center[1];
             lat_long["place_name"] = res.body.features[0].place_name;
-            console.log(lat_long);
-            // callback(undefined, {
-            //     lat : res.body.features[0].center[0],
-            //     lon : res.body.features[0].center[1],
-            //     location : res.body.features[0].place_name
-            // })
+            // return lat_long.latitude;
+            console.log("Lat long:"+ lat_long.latitude);
+            callback("Fetched in callback", {
+                lat : res.body.features[0].center[0],
+                lon : res.body.features[0].center[1],
+                location : res.body.features[0].place_name
+            })
         }
 
     })
+    // console.log("REsult" + Object.keys(result) + result.callback);
 
     // Not returning properly
-    console.log("before returning: ", lat_long.longitude);
-    return lat_long;
+    console.log("before returning: ", lat_long["longitude"]);
+    return lat_long.latitude;
 }
