@@ -7,7 +7,9 @@ const register = (e) => {
     const address = e.target.elements.addressroom.value +" "+ e.target.elements.addresslocality.value +" "+ e.target.elements.addresslandmark.value +" "+ e.target.elements.addressdistrict.value +" "+ e.target.elements.addresspincode.value;
     const password = e.target.elements.password.value;
     const cnfpassword = e.target.elements.confirmpassword.value
-
+    alert("Hi");
+    if(category != null && fullname != null && username != null && mobileNo != null && address != null && password != null){
+        console.log(username);
     if(cnfpassword === password) {
         fetch('/register',{
             method: "POST", 
@@ -33,6 +35,11 @@ const register = (e) => {
          
     })
     }
+}
+else{
+    // details not filled
+    alert("Fill all details!");
+}
     console.log('hello world');
 }
 
